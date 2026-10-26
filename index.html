@@ -51,11 +51,11 @@
         <!-- Header -->
         <header class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex flex-col md:flex-row items-start md:items-center justify-between">
             <div>
-                <h1 class="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">Feasibility Study Plan</h1>
-                <p class="text-slate-500 mt-1">Sachet & Box Production Interactive Calculator</p>
+                <h1 class="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">Macrogol 4000 Packaging Facility</h1>
+                <p class="text-slate-500 mt-1">Strategic Feasibility & Capacity Interactive Dashboard • South Riyadh</p>
             </div>
-            <div class="mt-4 md:mt-0 px-4 py-2 bg-blue-50 text-blue-700 rounded-lg font-medium text-sm border border-blue-100">
-                Live Analysis Active
+            <div class="mt-4 md:mt-0 px-4 py-2 bg-emerald-50 text-emerald-700 rounded-lg font-medium text-sm border border-emerald-100">
+                SAR Currency Model
             </div>
         </header>
 
@@ -65,73 +65,75 @@
             <!-- Left Column: Inputs (Parameters) -->
             <div class="lg:col-span-4 space-y-6">
                 
-                <!-- Financial Parameters -->
+                <!-- Target Output Simulator -->
                 <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
                     <h2 class="text-lg font-semibold mb-4 flex items-center text-slate-800">
-                        <svg class="w-5 h-5 mr-2 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Financials
+                        <svg class="w-5 h-5 mr-2 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                        Target Production (Monthly)
                     </h2>
                     <div class="space-y-4">
                         <div>
-                            <label class="block text-sm font-medium text-slate-600 mb-1">Total Available Budget ($)</label>
-                            <input type="number" id="in_budget" value="15000" min="0" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary/50" oninput="calculate()">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-slate-600 mb-1">Selling Price per Box/Sachet ($)</label>
-                            <input type="number" id="in_price" value="5.50" min="0" step="0.1" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary/50" oninput="calculate()">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Raw Materials -->
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
-                    <h2 class="text-lg font-semibold mb-4 flex items-center text-slate-800">
-                        <svg class="w-5 h-5 mr-2 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
-                        Raw Materials
-                    </h2>
-                    <div class="space-y-4">
-                        <div>
-                            <label class="block text-sm font-medium text-slate-600 mb-1">Available Material Inventory (kg)</label>
-                            <input type="number" id="in_mat_inventory" value="500" min="0" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-warning/50" oninput="calculate()">
+                            <label class="block text-sm font-medium text-slate-600 mb-1">Monthly Production Volume (Boxes)</label>
+                            <input type="number" id="in_target_boxes" value="5000" min="0" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary/50 font-semibold" oninput="calculate()">
+                            <p class="text-xs text-slate-500 mt-1">Ex: 5,000 Moderate | 10,000 High | 1,740 Break-even</p>
                         </div>
                         <div class="grid grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-sm font-medium text-slate-600 mb-1">Cost per kg ($)</label>
-                                <input type="number" id="in_mat_cost" value="12" min="0" step="0.1" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-warning/50" oninput="calculate()">
+                                <label class="block text-sm font-medium text-slate-600 mb-1">Sachets per Box</label>
+                                <input type="number" id="in_sachets_per_box" value="20" min="1" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary/50" oninput="calculate()">
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-slate-600 mb-1">Usage per Unit (g)</label>
-                                <input type="number" id="in_mat_per_unit" value="250" min="1" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-warning/50" oninput="calculate()">
+                                <label class="block text-sm font-medium text-slate-600 mb-1">Sachet Weight (g)</label>
+                                <input type="number" id="in_sachet_weight" value="10" min="1" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary/50" oninput="calculate()" disabled>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Workforce & Time -->
+                <!-- Financial Economics -->
                 <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
                     <h2 class="text-lg font-semibold mb-4 flex items-center text-slate-800">
-                        <svg class="w-5 h-5 mr-2 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-                        Workforce & Time
+                        <svg class="w-5 h-5 mr-2 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Unit Economics & OpEx
                     </h2>
                     <div class="space-y-4">
                         <div class="grid grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-sm font-medium text-slate-600 mb-1">Number of Workers</label>
-                                <input type="number" id="in_workers" value="4" min="0" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-success/50" oninput="calculate()">
+                                <label class="block text-sm font-medium text-slate-600 mb-1">Wholesale Price (SAR)</label>
+                                <input type="number" id="in_price" value="35.00" min="0" step="0.1" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-warning/50" oninput="calculate()">
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-slate-600 mb-1">Shift Time (Hours)</label>
-                                <input type="number" id="in_hours" value="8" min="0" step="0.5" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-success/50" oninput="calculate()">
+                                <label class="block text-sm font-medium text-slate-600 mb-1">Variable Cost (SAR)</label>
+                                <input type="number" id="in_var_cost" value="12.00" min="0" step="0.1" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-warning/50" oninput="calculate()">
                             </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-600 mb-1">Fixed Monthly OpEx (SAR)</label>
+                            <input type="number" id="in_fixed_opex" value="40000" min="0" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-warning/50" oninput="calculate()">
+                            <p class="text-xs text-slate-500 mt-1">Covers rent, standard labor, and base utilities.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Machinery & Shift Parameters -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+                    <h2 class="text-lg font-semibold mb-4 flex items-center text-slate-800">
+                        <svg class="w-5 h-5 mr-2 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        VFFS Machinery Layout
+                    </h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-600 mb-1">Machine Speed (Sachets/min)</label>
+                            <input type="number" id="in_speed" value="40" min="1" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-success/50" oninput="calculate()">
                         </div>
                         <div class="grid grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-sm font-medium text-slate-600 mb-1">Units / Worker / Hour</label>
-                                <input type="number" id="in_speed" value="30" min="0" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-success/50" oninput="calculate()">
+                                <label class="block text-sm font-medium text-slate-600 mb-1">Hours / Shift</label>
+                                <input type="number" id="in_hours" value="8" min="0" step="1" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-success/50" oninput="calculate()">
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-slate-600 mb-1">Labor Cost / Shift ($)</label>
-                                <input type="number" id="in_labor_cost" value="120" min="0" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-success/50" oninput="calculate()">
+                                <label class="block text-sm font-medium text-slate-600 mb-1">Days / Month</label>
+                                <input type="number" id="in_days" value="25" min="0" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-success/50" oninput="calculate()">
                             </div>
                         </div>
                     </div>
@@ -144,62 +146,98 @@
                 <!-- KPI Cards -->
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
                     <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 relative overflow-hidden group">
-                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-110 transition-transform"><svg class="w-16 h-16" fill="currentColor" viewBox="0 0 20 20"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"></path></svg></div>
-                        <p class="text-sm font-medium text-slate-500 mb-1">Actual Feasible Production</p>
-                        <h3 class="text-3xl font-bold text-slate-900" id="out_actual_production">0</h3>
-                        <p class="text-sm mt-2 text-slate-600">Units / Batch</p>
-                    </div>
-                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 relative overflow-hidden group">
                         <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-110 transition-transform"><svg class="w-16 h-16 text-success" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg></div>
                         <p class="text-sm font-medium text-slate-500 mb-1">Estimated Net Profit</p>
-                        <h3 class="text-3xl font-bold text-success" id="out_profit">$0.00</h3>
-                        <p class="text-sm mt-2 text-slate-600">ROI: <span id="out_roi" class="font-semibold">0%</span></p>
+                        <h3 class="text-3xl font-bold text-success" id="out_profit">SAR 0</h3>
+                        <p class="text-sm mt-2 text-slate-600">Net Margin: <span id="out_margin" class="font-semibold">0%</span></p>
                     </div>
+                    
                     <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 relative overflow-hidden group">
-                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-110 transition-transform"><svg class="w-16 h-16 text-danger" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg></div>
-                        <p class="text-sm font-medium text-slate-500 mb-1">Primary Bottleneck</p>
-                        <h3 class="text-2xl font-bold text-danger capitalize" id="out_bottleneck">None</h3>
-                        <p class="text-sm mt-2 text-slate-600">Limits your overall capacity</p>
+                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-110 transition-transform"><svg class="w-16 h-16 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"></path></svg></div>
+                        <p class="text-sm font-medium text-slate-500 mb-1">Capacity Utilization</p>
+                        <h3 class="text-3xl font-bold text-slate-900" id="out_utilization">0%</h3>
+                        <p class="text-sm mt-2 text-slate-600"><span id="out_sachets_needed" class="font-semibold">0</span> / <span id="out_max_sachets">0</span> Sachets</p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-110 transition-transform"><svg class="w-16 h-16 text-warning" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A12.014 12.014 0 0010.337 1a12.011 12.011 0 00-7.33 2.531l-.25.197a1 1 0 00-.357.772v4.062c0 3.86 2.378 7.391 5.922 9.206a1.002 1.002 0 00.998 0c3.544-1.815 5.922-5.346 5.922-9.206V4.5a1 1 0 00-.357-.772l-.25-.197a12.01 12.01 0 00-3.333-1.485zM10.5 5.5a1 1 0 00-1 1v4.5a1 1 0 102 0V6.5a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg></div>
+                        <p class="text-sm font-medium text-slate-500 mb-1">Break-Even Point</p>
+                        <h3 class="text-2xl font-bold text-slate-900" id="out_breakeven_boxes">0</h3>
+                        <p class="text-sm mt-2 text-slate-600">Boxes / Month</p>
                     </div>
                 </div>
 
-                <!-- Analysis Charts & Breakdowns -->
+                <!-- Financial Analysis & Charts -->
                 <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
-                    <h2 class="text-lg font-semibold mb-6 text-slate-800">Capacity Constraints Analysis</h2>
+                    <h2 class="text-lg font-semibold mb-6 text-slate-800">Monthly P&L Projection</h2>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                         <div class="relative h-64 w-full">
-                            <canvas id="limitsChart"></canvas>
+                            <canvas id="financialChart"></canvas>
                         </div>
                         
                         <div class="space-y-4">
-                            <h3 class="font-medium text-slate-700 border-b pb-2">Theoretical Maximums</h3>
+                            <h3 class="font-medium text-slate-700 border-b pb-2">Financial Breakdown</h3>
                             
                             <div class="flex justify-between items-center text-sm">
-                                <span class="flex items-center text-slate-600"><span class="w-3 h-3 rounded-full bg-blue-500 mr-2"></span> Budget Limit</span>
-                                <span class="font-semibold text-slate-900" id="limit_budget">0 units</span>
+                                <span class="text-slate-600">Gross Revenue</span>
+                                <span class="font-semibold text-slate-900" id="brk_revenue">SAR 0</span>
                             </div>
                             
                             <div class="flex justify-between items-center text-sm">
-                                <span class="flex items-center text-slate-600"><span class="w-3 h-3 rounded-full bg-amber-500 mr-2"></span> Material Limit</span>
-                                <span class="font-semibold text-slate-900" id="limit_material">0 units</span>
+                                <span class="text-slate-600">Total Variable Costs (Materials)</span>
+                                <span class="font-semibold text-danger" id="brk_var_cost">- SAR 0</span>
                             </div>
                             
                             <div class="flex justify-between items-center text-sm">
-                                <span class="flex items-center text-slate-600"><span class="w-3 h-3 rounded-full bg-emerald-500 mr-2"></span> Labor/Time Limit</span>
-                                <span class="font-semibold text-slate-900" id="limit_labor">0 units</span>
+                                <span class="text-slate-600">Fixed Operating Expenses</span>
+                                <span class="font-semibold text-danger" id="brk_fixed_cost">- SAR 0</span>
                             </div>
 
-                            <div class="mt-6 p-4 bg-slate-50 rounded-lg border border-slate-100">
-                                <h4 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Financial Breakdown</h4>
-                                <div class="space-y-1 text-sm">
-                                    <div class="flex justify-between"><span class="text-slate-600">Total Revenue:</span> <span class="font-medium text-slate-900" id="brk_revenue">$0</span></div>
-                                    <div class="flex justify-between"><span class="text-slate-600">Material Cost:</span> <span class="font-medium text-danger" id="brk_mat_cost">-$0</span></div>
-                                    <div class="flex justify-between"><span class="text-slate-600">Labor Cost:</span> <span class="font-medium text-danger" id="brk_labor_cost">-$0</span></div>
+                            <div class="mt-4 p-4 bg-slate-50 rounded-lg border border-slate-100">
+                                <div class="flex justify-between items-center text-sm font-bold">
+                                    <span class="text-slate-800">Contribution Margin per Box:</span>
+                                    <span class="text-primary" id="brk_contribution">SAR 0</span>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+                
+                <!-- Project Milestones Table -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 overflow-x-auto">
+                     <h2 class="text-lg font-semibold mb-4 text-slate-800">Project Launch & Milestones</h2>
+                     <table class="min-w-full divide-y divide-slate-200 text-sm">
+                        <thead>
+                            <tr>
+                                <th class="px-3 py-3 bg-slate-50 text-left font-medium text-slate-500 uppercase tracking-wider">Milestone</th>
+                                <th class="px-3 py-3 bg-slate-50 text-left font-medium text-slate-500 uppercase tracking-wider">Target</th>
+                                <th class="px-3 py-3 bg-slate-50 text-left font-medium text-slate-500 uppercase tracking-wider">Date</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-slate-100 text-slate-700">
+                            <tr>
+                                <td class="px-3 py-3 font-medium">Total Cash Needed NOW</td>
+                                <td class="px-3 py-3">SAR 337,000</td>
+                                <td class="px-3 py-3 whitespace-nowrap">Nov 1, 2026</td>
+                            </tr>
+                            <tr>
+                                <td class="px-3 py-3 font-medium">Facility Setup & Licensing</td>
+                                <td class="px-3 py-3">SFDA/GMP Clearance</td>
+                                <td class="px-3 py-3 whitespace-nowrap">Jan 31, 2027</td>
+                            </tr>
+                            <tr>
+                                <td class="px-3 py-3 font-medium">Commercial Production Kickoff</td>
+                                <td class="px-3 py-3">Day 1 Production</td>
+                                <td class="px-3 py-3 whitespace-nowrap">Feb 1, 2027</td>
+                            </tr>
+                            <tr>
+                                <td class="px-3 py-3 font-medium">First Break-Even Cleared</td>
+                                <td class="px-3 py-3">34,800 Sachets</td>
+                                <td class="px-3 py-3 whitespace-nowrap">Feb 25, 2027</td>
+                            </tr>
+                        </tbody>
+                     </table>
                 </div>
 
             </div>
@@ -208,10 +246,10 @@
 
     <!-- Application Logic -->
     <script>
-        let limitsChart;
+        let financialChart;
 
         function formatMoney(num) {
-            return '$' + num.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            return 'SAR ' + num.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0});
         }
 
         function formatNum(num) {
@@ -219,25 +257,20 @@
         }
 
         function initChart() {
-            const ctx = document.getElementById('limitsChart').getContext('2d');
-            limitsChart = new Chart(ctx, {
+            const ctx = document.getElementById('financialChart').getContext('2d');
+            financialChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['Budget Capacity', 'Material Capacity', 'Labor Capacity'],
+                    labels: ['Revenue', 'Variable Costs', 'Fixed Costs', 'Net Profit'],
                     datasets: [{
-                        label: 'Maximum Possible Units',
-                        data: [0, 0, 0],
+                        label: 'Financials (SAR)',
+                        data: [0, 0, 0, 0],
                         backgroundColor: [
-                            'rgba(59, 130, 246, 0.7)', // Blue
-                            'rgba(245, 158, 11, 0.7)', // Amber
-                            'rgba(16, 185, 129, 0.7)'  // Emerald
+                            'rgba(59, 130, 246, 0.8)', // Blue (Revenue)
+                            'rgba(245, 158, 11, 0.8)', // Amber (Var Cost)
+                            'rgba(239, 68, 68, 0.8)',  // Red (Fixed Cost)
+                            'rgba(16, 185, 129, 0.8)'  // Emerald (Profit)
                         ],
-                        borderColor: [
-                            'rgb(59, 130, 246)',
-                            'rgb(245, 158, 11)',
-                            'rgb(16, 185, 129)'
-                        ],
-                        borderWidth: 1,
                         borderRadius: 4
                     }]
                 },
@@ -245,97 +278,80 @@
                     responsive: true,
                     maintainAspectRatio: false,
                     scales: {
-                        y: {
-                            beginAtZero: true,
-                            grid: { color: 'rgba(0,0,0,0.05)' }
-                        },
-                        x: {
-                            grid: { display: false }
-                        }
+                        y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.05)' } },
+                        x: { grid: { display: false } }
                     },
-                    plugins: {
-                        legend: { display: false }
-                    }
+                    plugins: { legend: { display: false } }
                 }
             });
         }
 
         function calculate() {
             // 1. Gather Inputs
-            const budget = parseFloat(document.getElementById('in_budget').value) || 0;
+            const targetBoxes = parseFloat(document.getElementById('in_target_boxes').value) || 0;
+            const sachetsPerBox = parseFloat(document.getElementById('in_sachets_per_box').value) || 1;
+            
             const sellingPrice = parseFloat(document.getElementById('in_price').value) || 0;
+            const variableCost = parseFloat(document.getElementById('in_var_cost').value) || 0;
+            const fixedOpEx = parseFloat(document.getElementById('in_fixed_opex').value) || 0;
             
-            const matInventoryKg = parseFloat(document.getElementById('in_mat_inventory').value) || 0;
-            const matCostPerKg = parseFloat(document.getElementById('in_mat_cost').value) || 0;
-            const matPerUnitGrams = parseFloat(document.getElementById('in_mat_per_unit').value) || 1; // prevent divide by 0
-            
-            const workers = parseFloat(document.getElementById('in_workers').value) || 0;
-            const shiftHours = parseFloat(document.getElementById('in_hours').value) || 0;
-            const unitsPerWorkerHour = parseFloat(document.getElementById('in_speed').value) || 0;
-            const laborCostPerShift = parseFloat(document.getElementById('in_labor_cost').value) || 0;
+            const machineSpeed = parseFloat(document.getElementById('in_speed').value) || 0;
+            const hoursPerShift = parseFloat(document.getElementById('in_hours').value) || 0;
+            const daysPerMonth = parseFloat(document.getElementById('in_days').value) || 0;
 
-            // 2. Calculate Limits
-            // Limit A: Based on Raw Material Inventory
-            const unitsFromInventory = Math.floor((matInventoryKg * 1000) / matPerUnitGrams);
+            // 2. Capacity Calculations
+            const targetSachets = targetBoxes * sachetsPerBox;
+            const maxSachetsPerMonth = machineSpeed * 60 * hoursPerShift * daysPerMonth;
             
-            // Limit B: Based on Labor & Time Capacity
-            const unitsFromLabor = Math.floor(workers * shiftHours * unitsPerWorkerHour);
-            
-            // Limit C: Based on Budget
-            const totalLaborCost = workers * laborCostPerShift;
-            const budgetRemainingForMaterials = budget - totalLaborCost;
-            
-            let unitsFromBudget = 0;
-            if (budgetRemainingForMaterials > 0 && matCostPerKg > 0) {
-                const affordableMaterialKg = budgetRemainingForMaterials / matCostPerKg;
-                unitsFromBudget = Math.floor((affordableMaterialKg * 1000) / matPerUnitGrams);
+            let capacityUtilization = 0;
+            if (maxSachetsPerMonth > 0) {
+                capacityUtilization = (targetSachets / maxSachetsPerMonth) * 100;
             }
 
-            // 3. Determine Actual Production & Bottleneck
-            // We can only produce the minimum of all our constraints
-            const actualProduction = Math.max(0, Math.min(unitsFromInventory, unitsFromLabor, unitsFromBudget));
-
-            let bottleneck = "None";
-            if (actualProduction === 0) {
-                bottleneck = budgetRemainingForMaterials < 0 ? "Budget (Can't cover labor)" : "Zero Inputs";
-            } else if (actualProduction === unitsFromBudget) {
-                bottleneck = "Budget Limit";
-            } else if (actualProduction === unitsFromInventory) {
-                bottleneck = "Raw Material Inventory";
-            } else if (actualProduction === unitsFromLabor) {
-                bottleneck = "Workforce & Time";
+            // 3. Financial Calculations
+            const revenue = targetBoxes * sellingPrice;
+            const totalVariableCost = targetBoxes * variableCost;
+            const totalCost = fixedOpEx + totalVariableCost;
+            const netProfit = revenue - totalCost;
+            
+            let netMargin = 0;
+            if (revenue > 0) {
+                netMargin = (netProfit / revenue) * 100;
+            }
+            
+            const contributionMargin = sellingPrice - variableCost;
+            let breakEvenBoxes = 0;
+            if (contributionMargin > 0) {
+                breakEvenBoxes = Math.ceil(fixedOpEx / contributionMargin);
             }
 
-            // 4. Financial Calculations based on ACTUAL production
-            const actualMaterialKgUsed = (actualProduction * matPerUnitGrams) / 1000;
-            const actualMaterialCost = actualMaterialKgUsed * matCostPerKg;
-            const totalCost = totalLaborCost + actualMaterialCost;
-            const revenue = actualProduction * sellingPrice;
-            const profit = revenue - totalCost;
-            const roi = totalCost > 0 ? (profit / totalCost) * 100 : 0;
-
-            // 5. Update UI
-            document.getElementById('out_actual_production').innerText = formatNum(actualProduction);
-            document.getElementById('out_profit').innerText = formatMoney(profit);
+            // 4. Update UI
+            const profitEl = document.getElementById('out_profit');
+            profitEl.innerText = formatMoney(netProfit);
+            profitEl.className = netProfit >= 0 ? 'text-3xl font-bold text-success' : 'text-3xl font-bold text-danger';
             
-            const roiEl = document.getElementById('out_roi');
-            roiEl.innerText = roi.toFixed(1) + '%';
-            roiEl.className = roi > 0 ? 'font-semibold text-success' : 'font-semibold text-danger';
+            const marginEl = document.getElementById('out_margin');
+            marginEl.innerText = netMargin.toFixed(1) + '%';
+            marginEl.className = netMargin >= 0 ? 'font-semibold text-success' : 'font-semibold text-danger';
 
-            document.getElementById('out_bottleneck').innerText = bottleneck;
-
-            document.getElementById('limit_budget').innerText = formatNum(Math.max(0, unitsFromBudget)) + ' units';
-            document.getElementById('limit_material').innerText = formatNum(unitsFromInventory) + ' units';
-            document.getElementById('limit_labor').innerText = formatNum(unitsFromLabor) + ' units';
+            const utilEl = document.getElementById('out_utilization');
+            utilEl.innerText = capacityUtilization.toFixed(1) + '%';
+            utilEl.className = capacityUtilization > 100 ? 'text-3xl font-bold text-danger' : 'text-3xl font-bold text-slate-900';
+            
+            document.getElementById('out_sachets_needed').innerText = formatNum(targetSachets);
+            document.getElementById('out_max_sachets').innerText = formatNum(maxSachetsPerMonth);
+            
+            document.getElementById('out_breakeven_boxes').innerText = formatNum(breakEvenBoxes);
 
             document.getElementById('brk_revenue').innerText = formatMoney(revenue);
-            document.getElementById('brk_mat_cost').innerText = '-' + formatMoney(actualMaterialCost);
-            document.getElementById('brk_labor_cost').innerText = '-' + formatMoney(totalLaborCost);
+            document.getElementById('brk_var_cost').innerText = '-' + formatMoney(totalVariableCost);
+            document.getElementById('brk_fixed_cost').innerText = '-' + formatMoney(fixedOpEx);
+            document.getElementById('brk_contribution').innerText = formatMoney(contributionMargin);
 
-            // 6. Update Chart
-            if (limitsChart) {
-                limitsChart.data.datasets[0].data = [Math.max(0, unitsFromBudget), unitsFromInventory, unitsFromLabor];
-                limitsChart.update();
+            // 5. Update Chart
+            if (financialChart) {
+                financialChart.data.datasets[0].data = [revenue, totalVariableCost, fixedOpEx, netProfit];
+                financialChart.update();
             }
         }
 
